@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoreDataViewController.h"
 
-@interface PageViewController : UIViewController<UITableViewDelegate, UITableViewDataSource> {    
+@interface PageViewController : CoreDataViewController<UITableViewDelegate, UITableViewDataSource> {    
     NSInteger _itemCountPerPage;
     NSInteger _itemWidth;
     NSInteger _itemGap;

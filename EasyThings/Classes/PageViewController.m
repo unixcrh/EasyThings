@@ -66,6 +66,9 @@
     if(row >= _itemCount) {
         cell.hidden = YES;
     }
+    else {
+        
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

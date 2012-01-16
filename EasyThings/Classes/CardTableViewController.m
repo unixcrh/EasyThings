@@ -7,6 +7,7 @@
 //
 
 #import "CardTableViewController.h"
+#import "CardTableViewCell.h"
 
 #define kCardWidth 300
 
@@ -30,6 +31,14 @@
     _itemWidth = kCardWidth;
     _itemCount = 4;
     [self initPage];
+}
+
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    [super configureCell:cell atIndexPath:indexPath];
+    if(indexPath.row < _itemCount) {
+        CardTableViewCell *cardTableViewCell = (CardTableViewCell *)cell;
+        cardTableViewCell.cardViewController.managedObjectContext = self.managedObjectContext;
+    }
 }
 
 - (NSString *)customCellClassNameAtIndexPath:(NSIndexPath *)indexPath

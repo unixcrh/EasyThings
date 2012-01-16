@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CardViewController.h"
 
 @interface CardTableViewCell : UITableViewCell {
+    CardViewController *_cardViewController;
 }
+
+@property (nonatomic, retain) CardViewController *cardViewController;
 
 @end

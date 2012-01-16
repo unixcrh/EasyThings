@@ -20,6 +20,7 @@
 {
     // Override point for customization after application launch.
     RootViewController *controller = [[[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil] autorelease];
+    controller.managedObjectContext = self.managedObjectContext;
     self.window.rootViewController = controller;
     [self.window makeKeyAndVisible];
     return YES;

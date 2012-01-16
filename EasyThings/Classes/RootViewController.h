@@ -7,16 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreData/CoreData.h>
+#import "CoreDataViewController.h"
 
 @class CardTableViewController;
 @class QuicknavTableViewController;
-@interface RootViewController : UIViewController {
+@interface RootViewController : CoreDataViewController {
     IBOutlet CardTableViewController *_cardTableViewController;
     IBOutlet QuicknavTableViewController *_quicknavTableViewController;
 }
 
-@property (retain, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (retain, nonatomic) CardTableViewController *cardTableViewController;
 @property (retain, nonatomic) QuicknavTableViewController *quicknavTableViewController;
 

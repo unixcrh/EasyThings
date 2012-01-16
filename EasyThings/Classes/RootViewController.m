@@ -12,7 +12,6 @@
 
 @implementation RootViewController
 
-@synthesize managedObjectContext = __managedObjectContext;
 @synthesize cardTableViewController = _cardTableViewController;
 @synthesize quicknavTableViewController = _quicknavTableViewController;
 
@@ -23,7 +22,6 @@
 }
 
 - (void)dealloc {
-    [__managedObjectContext release];
     [_cardTableViewController release];
     [_quicknavTableViewController release];
     [super dealloc];
@@ -36,10 +34,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     // Set up the edit and add buttons.
-    _cardTableViewController.view.frame = CGRectMake(0, -39, 1024, 700);
+    self.cardTableViewController.view.frame = CGRectMake(0, -39, 1024, 700);
     [self.view addSubview:_cardTableViewController.view];
-    _quicknavTableViewController.view.frame = CGRectMake(0, 620, 1024, 200);
+    self.quicknavTableViewController.view.frame = CGRectMake(0, 620, 1024, 200);
     [self.view addSubview:_quicknavTableViewController.view];
+    self.cardTableViewController.managedObjectContext = self.managedObjectContext;
 }
 
 - (void)viewDidUnload
