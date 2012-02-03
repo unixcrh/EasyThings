@@ -18,6 +18,6 @@
 
 @property (nonatomic, retain) IBOutlet UILabel *titleLabel;
 @property (nonatomic, retain) CardItem *cardItem;
-@property (nonatomic, retain) WordTableViewController *WordTableViewController;
+@property (nonatomic, retain) WordTableViewController *wordTableViewController;
 
 @end

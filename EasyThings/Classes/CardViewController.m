@@ -12,13 +12,13 @@
 @implementation CardViewController
 
 @synthesize cardItem = _cardItem,
-            WordTableViewController = _WordTableViewController,
+            wordTableViewController = _wordTableViewController,
             titleLabel = _titleLabel;
 
 - (void)dealloc {
     [_cardItem release];
     [_titleLabel release];
-    [_WordTableViewController release];
+    [_wordTableViewController release];
     [super dealloc];
 }
 
@@ -32,10 +32,23 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void)loadWordTableViewController {
     WordTableViewController *vc = [[WordTableViewController alloc] init];
+    self.wordTableViewController = vc;
+    self.wordTableViewController.cardItem = self.cardItem;
     [self.view addSubview:vc.view];
-    self.WordTableViewController = vc;
     [vc release];
+}
+
+- (void)setCardItem:(CardItem *)cardItem {
+    if(_cardItem != cardItem) {
+        [_cardItem release];
+        _cardItem = [cardItem retain];
+        self.managedObjectContext = _cardItem.managedObjectContext;
+        [self loadWordTableViewController];
+    }
 }
 
 @end

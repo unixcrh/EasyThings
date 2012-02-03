@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "CoreDataTableViewController.h"
 
+@class CardItem;
+
 @interface WordTableViewController : CoreDataTableViewController
 
-//@property (nonatomic, retain)
+@property (nonatomic, retain) CardItem *cardItem;
 
 - (IBAction)didClickAddButton:(id)sender;
 

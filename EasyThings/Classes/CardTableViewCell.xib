@@ -46,7 +46,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBUIImageView" id="946873872">
 								<reference key="NSNextResponder" ref="849186025"/>
-								<int key="NSvFlags">292</int>
+								<int key="NSvFlags">-2147483356</int>
 								<string key="NSFrame">{{-19, 0}, {400, 700}}</string>
 								<reference key="NSSuperview" ref="849186025"/>
 								<reference key="NSNextKeyView" ref="386090727"/>
@@ -60,10 +60,9 @@
 							</object>
 							<object class="IBUIImageView" id="386090727">
 								<reference key="NSNextResponder" ref="849186025"/>
-								<int key="NSvFlags">292</int>
+								<int key="NSvFlags">-2147483356</int>
 								<string key="NSFrame">{{31, 75}, {300, 60}}</string>
 								<reference key="NSSuperview" ref="849186025"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:569</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -184,7 +183,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">90</int>
+			<int key="maxID">91</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
