@@ -8,9 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "CoreDataTableViewController.h"
+#import "CardItem.h"
 
-@interface CardViewController : CoreDataTableViewController {
+@class WordTableViewController;
+
+@interface CardViewController : CoreDataViewController {
     
 }
+
+@property (nonatomic, retain) IBOutlet UILabel *titleLabel;
+@property (nonatomic, retain) CardItem *cardItem;
+@property (nonatomic, retain) WordTableViewController *WordTableViewController;
 
 @end

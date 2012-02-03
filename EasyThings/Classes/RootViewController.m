@@ -27,25 +27,23 @@
     [super dealloc];
 }
 
-#pragma mark - View lifecycle
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     // Set up the edit and add buttons.
+    self.cardTableViewController.managedObjectContext = self.managedObjectContext;
     self.cardTableViewController.view.frame = CGRectMake(0, -39, 1024, 700);
     [self.view addSubview:_cardTableViewController.view];
     self.quicknavTableViewController.view.frame = CGRectMake(0, 620, 1024, 200);
     [self.view addSubview:_quicknavTableViewController.view];
-    self.cardTableViewController.managedObjectContext = self.managedObjectContext;
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated

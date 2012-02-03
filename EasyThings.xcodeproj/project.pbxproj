@@ -13,6 +13,8 @@
 		E11DF20D14C467CC00DDC51A /* checkbox_content_20_20.png in Resources */ = {isa = PBXBuildFile; fileRef = E11DF20B14C467CC00DDC51A /* checkbox_content_20_20.png */; };
 		E11DF20E14C467CC00DDC51A /* checkbox_frame_20_20.png in Resources */ = {isa = PBXBuildFile; fileRef = E11DF20C14C467CC00DDC51A /* checkbox_frame_20_20.png */; };
 		E11DF21014C469E000DDC51A /* stroke_180_4.png in Resources */ = {isa = PBXBuildFile; fileRef = E11DF20F14C469E000DDC51A /* stroke_180_4.png */; };
+		E11DF21814C5234F00DDC51A /* WordTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11DF21614C5234E00DDC51A /* WordTableViewController.m */; };
+		E13A943B14DC90B4000C029F /* WordTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E13A943A14DC90B4000C029F /* WordTableViewController.xib */; };
 		E16889AE142CEFCD003AE4D8 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E16889AC142CEFCD003AE4D8 /* MainWindow.xib */; };
 		E16889BC142DC3E5003AE4D8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E16889BB142DC3E5003AE4D8 /* Icon.png */; };
 		E16889BE142DC403003AE4D8 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = E16889BD142DC403003AE4D8 /* Default-Landscape~ipad.png */; };
@@ -38,9 +40,11 @@
 		E19EAA7D148AA08400F63920 /* quicknavBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = E19EAA7C148AA08400F63920 /* quicknavBackground.png */; };
 		E19EAA82148AA0FE00F63920 /* QuicknavTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E19EAA80148AA0FE00F63920 /* QuicknavTableViewController.m */; };
 		E19EAA83148AA0FE00F63920 /* QuicknavTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E19EAA81148AA0FE00F63920 /* QuicknavTableViewController.xib */; };
-		E1DE921A14BD276D00CB4D6A /* ToDoThingsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DE921914BD276D00CB4D6A /* ToDoThingsItem.m */; };
+		E1A9515E14DC7F0E00C49B8C /* CardItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A9515D14DC7F0E00C49B8C /* CardItem.m */; };
+		E1A9516114DC7F3F00C49B8C /* WordItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A9516014DC7F3F00C49B8C /* WordItem.m */; };
+		E1A9517414DC846E00C49B8C /* WordItem+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A9517314DC846E00C49B8C /* WordItem+Addition.m */; };
+		E1A9517714DC848200C49B8C /* CardItem+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A9517614DC848200C49B8C /* CardItem+Addition.m */; };
 		E1DE921D14BD276D00CB4D6A /* QuickNavItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DE921C14BD276D00CB4D6A /* QuickNavItem.m */; };
-		E1DE922014BD276D00CB4D6A /* CardItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DE921F14BD276D00CB4D6A /* CardItem.m */; };
 		E1DE922814BD27D300CB4D6A /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DE922714BD27D300CB4D6A /* RootViewController.m */; };
 		E1DE922C14BD288000CB4D6A /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DE922A14BD288000CB4D6A /* CardViewController.m */; };
 		E1DE922D14BD288000CB4D6A /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1DE922B14BD288000CB4D6A /* CardViewController.xib */; };
@@ -63,6 +67,9 @@
 		E11DF20B14C467CC00DDC51A /* checkbox_content_20_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox_content_20_20.png; sourceTree = "<group>"; };
 		E11DF20C14C467CC00DDC51A /* checkbox_frame_20_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox_frame_20_20.png; sourceTree = "<group>"; };
 		E11DF20F14C469E000DDC51A /* stroke_180_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stroke_180_4.png; sourceTree = "<group>"; };
+		E11DF21514C5234E00DDC51A /* WordTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordTableViewController.h; sourceTree = "<group>"; };
+		E11DF21614C5234E00DDC51A /* WordTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordTableViewController.m; sourceTree = "<group>"; };
+		E13A943A14DC90B4000C029F /* WordTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WordTableViewController.xib; sourceTree = "<group>"; };
 		E16889AD142CEFCD003AE4D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		E16889BB142DC3E5003AE4D8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../../Icon.png; sourceTree = "<group>"; };
 		E16889BD142DC403003AE4D8 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "../../Default-Landscape~ipad.png"; sourceTree = "<group>"; };
@@ -97,12 +104,16 @@
 		E19EAA7F148AA0FE00F63920 /* QuicknavTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuicknavTableViewController.h; sourceTree = "<group>"; };
 		E19EAA80148AA0FE00F63920 /* QuicknavTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuicknavTableViewController.m; sourceTree = "<group>"; };
 		E19EAA81148AA0FE00F63920 /* QuicknavTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuicknavTableViewController.xib; sourceTree = "<group>"; };
-		E1DE921814BD276D00CB4D6A /* ToDoThingsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToDoThingsItem.h; path = EasyThings/Classes/ToDoThingsItem.h; sourceTree = "<group>"; };
-		E1DE921914BD276D00CB4D6A /* ToDoThingsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToDoThingsItem.m; path = EasyThings/Classes/ToDoThingsItem.m; sourceTree = "<group>"; };
+		E1A9515C14DC7F0E00C49B8C /* CardItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardItem.h; path = EasyThings/Classes/CardItem.h; sourceTree = "<group>"; };
+		E1A9515D14DC7F0E00C49B8C /* CardItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardItem.m; path = EasyThings/Classes/CardItem.m; sourceTree = "<group>"; };
+		E1A9515F14DC7F3F00C49B8C /* WordItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordItem.h; sourceTree = "<group>"; };
+		E1A9516014DC7F3F00C49B8C /* WordItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordItem.m; sourceTree = "<group>"; };
+		E1A9517214DC846E00C49B8C /* WordItem+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WordItem+Addition.h"; sourceTree = "<group>"; };
+		E1A9517314DC846E00C49B8C /* WordItem+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WordItem+Addition.m"; sourceTree = "<group>"; };
+		E1A9517514DC848200C49B8C /* CardItem+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CardItem+Addition.h"; sourceTree = "<group>"; };
+		E1A9517614DC848200C49B8C /* CardItem+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CardItem+Addition.m"; sourceTree = "<group>"; };
 		E1DE921B14BD276D00CB4D6A /* QuickNavItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuickNavItem.h; path = EasyThings/Classes/QuickNavItem.h; sourceTree = "<group>"; };
 		E1DE921C14BD276D00CB4D6A /* QuickNavItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuickNavItem.m; path = EasyThings/Classes/QuickNavItem.m; sourceTree = "<group>"; };
-		E1DE921E14BD276D00CB4D6A /* CardItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardItem.h; path = EasyThings/Classes/CardItem.h; sourceTree = "<group>"; };
-		E1DE921F14BD276D00CB4D6A /* CardItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardItem.m; path = EasyThings/Classes/CardItem.m; sourceTree = "<group>"; };
 		E1DE922614BD27D300CB4D6A /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		E1DE922714BD27D300CB4D6A /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		E1DE922914BD288000CB4D6A /* CardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardViewController.h; sourceTree = "<group>"; };
@@ -140,7 +151,6 @@
 		E16A650F142CE0C400DDC749 = {
 			isa = PBXGroup;
 			children = (
-				E1DE921614BD26BE00CB4D6A /* CoreData Models */,
 				E16A6526142CE0C400DDC749 /* EasyThings */,
 				E16A654B142CE12300DDC749 /* Classes */,
 				E16A654C142CE12300DDC749 /* Resources */,
@@ -194,31 +204,9 @@
 		E16A654B142CE12300DDC749 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E16889AC142CEFCD003AE4D8 /* MainWindow.xib */,
-				E16D533B143F0160002C17AF /* CoreDataTableViewController.h */,
-				E16D533C143F0160002C17AF /* CoreDataTableViewController.m */,
-				E16D533D143F0160002C17AF /* CoreDataViewController.h */,
-				E16D533E143F0160002C17AF /* CoreDataViewController.m */,
-				E1DF5863148AB257005EDDDD /* PageViewController.h */,
-				E1DF5864148AB257005EDDDD /* PageViewController.m */,
-				E16D5330143EBF3C002C17AF /* CardTableViewCell.h */,
-				E16D5331143EBF3C002C17AF /* CardTableViewCell.m */,
-				E16D5332143EBF3C002C17AF /* CardTableViewCell.xib */,
-				E16D5333143EBF3C002C17AF /* CardTableViewController.h */,
-				E16D5334143EBF3C002C17AF /* CardTableViewController.m */,
-				E16D5335143EBF3C002C17AF /* CardTableViewController.xib */,
-				E1DE922614BD27D300CB4D6A /* RootViewController.h */,
-				E1DE922714BD27D300CB4D6A /* RootViewController.m */,
-				E16A653C142CE0C400DDC749 /* RootViewController.xib */,
-				E1DF585E148AAFF7005EDDDD /* QuicknavTableViewCell.h */,
-				E1DF585F148AAFF7005EDDDD /* QuicknavTableViewCell.m */,
-				E1DF5860148AAFF7005EDDDD /* QuicknavTableViewCell.xib */,
-				E19EAA7F148AA0FE00F63920 /* QuicknavTableViewController.h */,
-				E19EAA80148AA0FE00F63920 /* QuicknavTableViewController.m */,
-				E19EAA81148AA0FE00F63920 /* QuicknavTableViewController.xib */,
-				E1DE922914BD288000CB4D6A /* CardViewController.h */,
-				E1DE922A14BD288000CB4D6A /* CardViewController.m */,
-				E1DE922B14BD288000CB4D6A /* CardViewController.xib */,
+				E1DE921614BD26BE00CB4D6A /* CoreData Models */,
+				E1A9516314DC805C00C49B8C /* ViewControllers */,
+				E1A9516214DC804E00C49B8C /* Categories */,
 			);
 			name = Classes;
 			path = EasyThings/Classes;
@@ -283,17 +271,64 @@
 			name = quicknav;
 			sourceTree = "<group>";
 		};
+		E1A9516214DC804E00C49B8C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				E1A9517214DC846E00C49B8C /* WordItem+Addition.h */,
+				E1A9517314DC846E00C49B8C /* WordItem+Addition.m */,
+				E1A9517514DC848200C49B8C /* CardItem+Addition.h */,
+				E1A9517614DC848200C49B8C /* CardItem+Addition.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		E1A9516314DC805C00C49B8C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E16889AC142CEFCD003AE4D8 /* MainWindow.xib */,
+				E16D533B143F0160002C17AF /* CoreDataTableViewController.h */,
+				E16D533C143F0160002C17AF /* CoreDataTableViewController.m */,
+				E16D533D143F0160002C17AF /* CoreDataViewController.h */,
+				E16D533E143F0160002C17AF /* CoreDataViewController.m */,
+				E1DF5863148AB257005EDDDD /* PageViewController.h */,
+				E1DF5864148AB257005EDDDD /* PageViewController.m */,
+				E16D5330143EBF3C002C17AF /* CardTableViewCell.h */,
+				E16D5331143EBF3C002C17AF /* CardTableViewCell.m */,
+				E16D5332143EBF3C002C17AF /* CardTableViewCell.xib */,
+				E16D5333143EBF3C002C17AF /* CardTableViewController.h */,
+				E16D5334143EBF3C002C17AF /* CardTableViewController.m */,
+				E16D5335143EBF3C002C17AF /* CardTableViewController.xib */,
+				E1DE922614BD27D300CB4D6A /* RootViewController.h */,
+				E1DE922714BD27D300CB4D6A /* RootViewController.m */,
+				E16A653C142CE0C400DDC749 /* RootViewController.xib */,
+				E1DF585E148AAFF7005EDDDD /* QuicknavTableViewCell.h */,
+				E1DF585F148AAFF7005EDDDD /* QuicknavTableViewCell.m */,
+				E1DF5860148AAFF7005EDDDD /* QuicknavTableViewCell.xib */,
+				E19EAA7F148AA0FE00F63920 /* QuicknavTableViewController.h */,
+				E19EAA80148AA0FE00F63920 /* QuicknavTableViewController.m */,
+				E19EAA81148AA0FE00F63920 /* QuicknavTableViewController.xib */,
+				E1DE922914BD288000CB4D6A /* CardViewController.h */,
+				E1DE922A14BD288000CB4D6A /* CardViewController.m */,
+				E1DE922B14BD288000CB4D6A /* CardViewController.xib */,
+				E11DF21514C5234E00DDC51A /* WordTableViewController.h */,
+				E11DF21614C5234E00DDC51A /* WordTableViewController.m */,
+				E13A943A14DC90B4000C029F /* WordTableViewController.xib */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		E1DE921614BD26BE00CB4D6A /* CoreData Models */ = {
 			isa = PBXGroup;
 			children = (
-				E1DE921E14BD276D00CB4D6A /* CardItem.h */,
-				E1DE921F14BD276D00CB4D6A /* CardItem.m */,
 				E1DE921B14BD276D00CB4D6A /* QuickNavItem.h */,
 				E1DE921C14BD276D00CB4D6A /* QuickNavItem.m */,
-				E1DE921814BD276D00CB4D6A /* ToDoThingsItem.h */,
-				E1DE921914BD276D00CB4D6A /* ToDoThingsItem.m */,
+				E1A9515C14DC7F0E00C49B8C /* CardItem.h */,
+				E1A9515D14DC7F0E00C49B8C /* CardItem.m */,
+				E1A9515F14DC7F3F00C49B8C /* WordItem.h */,
+				E1A9516014DC7F3F00C49B8C /* WordItem.m */,
 			);
 			name = "CoreData Models";
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,6 +409,7 @@
 				E11DF20D14C467CC00DDC51A /* checkbox_content_20_20.png in Resources */,
 				E11DF20E14C467CC00DDC51A /* checkbox_frame_20_20.png in Resources */,
 				E11DF21014C469E000DDC51A /* stroke_180_4.png in Resources */,
+				E13A943B14DC90B4000C029F /* WordTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,11 +430,14 @@
 				E19EAA82148AA0FE00F63920 /* QuicknavTableViewController.m in Sources */,
 				E1DF5861148AAFF7005EDDDD /* QuicknavTableViewCell.m in Sources */,
 				E1DF5865148AB257005EDDDD /* PageViewController.m in Sources */,
-				E1DE921A14BD276D00CB4D6A /* ToDoThingsItem.m in Sources */,
 				E1DE921D14BD276D00CB4D6A /* QuickNavItem.m in Sources */,
-				E1DE922014BD276D00CB4D6A /* CardItem.m in Sources */,
 				E1DE922814BD27D300CB4D6A /* RootViewController.m in Sources */,
 				E1DE922C14BD288000CB4D6A /* CardViewController.m in Sources */,
+				E11DF21814C5234F00DDC51A /* WordTableViewController.m in Sources */,
+				E1A9515E14DC7F0E00C49B8C /* CardItem.m in Sources */,
+				E1A9516114DC7F3F00C49B8C /* WordItem.m in Sources */,
+				E1A9517414DC846E00C49B8C /* WordItem+Addition.m in Sources */,
+				E1A9517714DC848200C49B8C /* CardItem+Addition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

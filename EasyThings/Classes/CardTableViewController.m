@@ -8,6 +8,7 @@
 
 #import "CardTableViewController.h"
 #import "CardTableViewCell.h"
+#import "CardItem+Addition.h"
 
 #define kCardWidth 300
 
@@ -37,7 +38,10 @@
     [super configureCell:cell atIndexPath:indexPath];
     if(indexPath.row < _itemCount) {
         CardTableViewCell *cardTableViewCell = (CardTableViewCell *)cell;
-        cardTableViewCell.cardViewController.managedObjectContext = self.managedObjectContext;
+        CardViewController *cardViewController = cardTableViewCell.cardViewController;
+        cardViewController.managedObjectContext = self.managedObjectContext;
+        cardViewController.cardItem = [CardItem insertCardAtIndex:indexPath.row inManagedObjectContext:self.managedObjectContext];
+        cardViewController.titleLabel.text = cardViewController.cardItem.name;
     }
 }
 

@@ -7,44 +7,35 @@
 //
 
 #import "CardViewController.h"
+#import "WordTableViewController.h"
 
 @implementation CardViewController
 
+@synthesize cardItem = _cardItem,
+            WordTableViewController = _WordTableViewController,
+            titleLabel = _titleLabel;
+
 - (void)dealloc {
-    [_tableView release];
+    [_cardItem release];
+    [_titleLabel release];
+    [_WordTableViewController release];
     [super dealloc];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    self.tableView = nil;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
+    self.titleLabel = nil;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-}
-
-- (void)configureRequest:(NSFetchRequest *)request {
-    [request setEntity:[NSEntityDescription entityForName:@"ToDoThingsItem" inManagedObjectContext:self.managedObjectContext]];
-    //NSPredicate *predicate;
-    //predicate = [NSPredicate predicateWithFormat:@"SELF IN %@", self.renrenUser.friends];
-    //[request setPredicate:predicate];
-    NSSortDescriptor *sort;
-    sort = [[NSSortDescriptor alloc] initWithKey:@"importance" ascending:YES];
-    NSArray *descriptors = [NSArray arrayWithObject:sort]; 
-    [request setSortDescriptors:descriptors]; 
-    [sort release];
+    WordTableViewController *vc = [[WordTableViewController alloc] init];
+    [self.view addSubview:vc.view];
+    self.WordTableViewController = vc;
+    [vc release];
 }
 
 @end
