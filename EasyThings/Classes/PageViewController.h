@@ -8,17 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "CoreDataViewController.h"
+#import "BaseScrollView.h"
 
-@interface PageViewController : CoreDataViewController<UITableViewDelegate, UITableViewDataSource> {    
+@interface PageViewController : CoreDataViewController<UIScrollViewDelegate> {    
     NSInteger _itemCountPerPage;
     NSInteger _itemWidth;
     NSInteger _itemGap;
     NSInteger _itemCount;
     NSInteger _itemGapRedundance;
-    UITableView *_tableview;
+    BaseScrollView *_scrollview;
 }
 
-@property(nonatomic, retain) IBOutlet UITableView *tableView;
+@property(nonatomic, retain) IBOutlet BaseScrollView *scrollView;
 
 - (void)initPage;
 // method to overwrite

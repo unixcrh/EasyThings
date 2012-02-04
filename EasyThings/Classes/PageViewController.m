@@ -10,11 +10,11 @@
 
 @implementation PageViewController
 
-@synthesize tableView = _tableView;
+@synthesize scrollView = _scrollview;
 
 - (void)dealloc 
 {
-    [_tableView release];
+    [self.scrollView release];
     [super dealloc];
 }
 
@@ -23,7 +23,7 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-    self.tableView = nil;
+    self.scrollView = nil;
 }
 
 #pragma mark - View lifecycle
@@ -32,12 +32,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tableView.pagingEnabled = YES;
-	CGRect oldFrame = self.tableView.frame;
-    self.tableView.transform = CGAffineTransformMakeRotation(-M_PI_2);
-	self.tableView.frame = oldFrame;
-	self.tableView.delegate = self;
-    self.tableView.dataSource = self;
+    self.scrollView.pagingEnabled = YES;
+	CGRect oldFrame = self.scrollView.frame;
+    //self.scrollView.transform = CGAffineTransformMakeRotation(-M_PI_2);
+	self.scrollView.frame = oldFrame;
+	CGFloat width = 1024;
+    CGFloat height = 800;
+    self.scrollView.contentSize = CGSizeMake(width, height);
+    self.scrollView.delegate = self;
+    //self.tableView.delegate = self;
+    //self.tableView.dataSource = self;
 }
 
 - (void)initPage {
@@ -45,10 +49,12 @@
     _itemGapRedundance = (1024 - _itemCountPerPage * _itemWidth) % (_itemCountPerPage + 1);
 }
 
-- (int)numberOfRows
-{
-    return [self.tableView numberOfRowsInSection:0];
-}
+//- (int)numberOfRows
+//{
+//    return [self.tableView numberOfRowsInSection:0];
+//}
+//
+
 
 - (NSString *)customCellClassNameAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -61,10 +67,12 @@
     return count;
 }
 
+
+
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     NSInteger row = indexPath.row;
     if(row >= _itemCount) {
-        cell.hidden = YES;
+        //cell.hidden = YES;
     }
     else {
         

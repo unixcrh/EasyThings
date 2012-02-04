@@ -10,5 +10,10 @@
 #import "PageViewController.h"
 
 @interface QuicknavTableViewController : PageViewController
+{
+    int count;
+}
+
+@property int count;
 
 @end

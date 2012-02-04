@@ -25,8 +25,7 @@
 - (void)awakeFromNib
 {
     //NSLog(@"CardTableViewCell awakeFromNib");
-    self.transform = CGAffineTransformRotate(self.transform, M_PI_2);
-    
+    //self.transform = CGAffineTransformRotate(self.transform, M_PI_2);  
     CardViewController *aCardViewController = [[CardViewController alloc] init];
     aCardViewController.view.frame = CGRectMake(CARD_VIEW_CONTROLLER_POS_X, CARD_VIEW_CONTROLLER_POS_Y, self.cardViewController.view.frame.size.width, self.cardViewController.view.frame.size.height);
     self.cardViewController = aCardViewController;

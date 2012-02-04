@@ -9,21 +9,44 @@
 #import "QuicknavTableViewCell.h"
 
 @implementation QuicknavTableViewCell
+
 @synthesize nameLabel = _nameLable;
 @synthesize iconImageView = _iconImageView;
+@synthesize titleStr;
 
 - (void)dealloc
 {
-    NSLog(@"QuicknavTableViewCell dealloc");
+    //NSLog(@"QuicknavTableViewCell dealloc");
     [_nameLable release];
     [_iconImageView release];
+    [titleStr release];
     [super dealloc];
 }
 
 - (void)awakeFromNib
 {
-    self.transform = CGAffineTransformRotate(self.transform, M_PI_2);
     self.nameLabel.font = [UIFont fontWithName:@"MV Boli" size:18.0f];
+}
+
+- (void)viewDidLoad
+{
+    [self.nameLabel setText: titleStr];
+    NSLog(@"load:%@",self.nameLabel.text);
+    [super viewDidLoad];
+}
+
+- (void)setDefaultImageName:(NSString *)imageName defaultTitleName:(NSString *)titleName
+{
+    self.view.backgroundColor = [UIColor clearColor];
+    self.iconImageView.image = [UIImage imageNamed:imageName];
+    self.nameLabel.font = [UIFont fontWithName:@"MV Boli" size:18.0f];
+    self.titleStr = titleName;
+    NSLog(@"%@",self.titleStr);
+}
+
+- (IBAction)touchBegins:(UIButton *)sender
+{
+    NSLog(@"touch");
 }
 
 @end

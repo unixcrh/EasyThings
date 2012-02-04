@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9BAAADA414DD663800D92CC8 /* BaseScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BAAADA314DD663800D92CC8 /* BaseScrollView.m */; };
 		E11DF20714C4623C00DDC51A /* button_substract_30_30.png in Resources */ = {isa = PBXBuildFile; fileRef = E11DF20414C4623B00DDC51A /* button_substract_30_30.png */; };
 		E11DF20814C4623C00DDC51A /* button_plus_30_30.png in Resources */ = {isa = PBXBuildFile; fileRef = E11DF20514C4623B00DDC51A /* button_plus_30_30.png */; };
 		E11DF20914C4623C00DDC51A /* button_setting_34_34.png in Resources */ = {isa = PBXBuildFile; fileRef = E11DF20614C4623B00DDC51A /* button_setting_34_34.png */; };
@@ -61,6 +62,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9BAAADA214DD663700D92CC8 /* BaseScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseScrollView.h; sourceTree = "<group>"; };
+		9BAAADA314DD663800D92CC8 /* BaseScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseScrollView.m; sourceTree = "<group>"; };
 		E11DF20414C4623B00DDC51A /* button_substract_30_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_substract_30_30.png; sourceTree = "<group>"; };
 		E11DF20514C4623B00DDC51A /* button_plus_30_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_plus_30_30.png; sourceTree = "<group>"; };
 		E11DF20614C4623B00DDC51A /* button_setting_34_34.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_setting_34_34.png; sourceTree = "<group>"; };
@@ -313,6 +316,8 @@
 				E11DF21514C5234E00DDC51A /* WordTableViewController.h */,
 				E11DF21614C5234E00DDC51A /* WordTableViewController.m */,
 				E13A943A14DC90B4000C029F /* WordTableViewController.xib */,
+				9BAAADA214DD663700D92CC8 /* BaseScrollView.h */,
+				9BAAADA314DD663800D92CC8 /* BaseScrollView.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -438,6 +443,7 @@
 				E1A9516114DC7F3F00C49B8C /* WordItem.m in Sources */,
 				E1A9517414DC846E00C49B8C /* WordItem+Addition.m in Sources */,
 				E1A9517714DC848200C49B8C /* CardItem+Addition.m in Sources */,
+				9BAAADA414DD663800D92CC8 /* BaseScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

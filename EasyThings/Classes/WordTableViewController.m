@@ -43,7 +43,7 @@
 }
 
 - (IBAction)didClickAddButton:(id)sender {
-    
+    NSLog(@"click on add button");
 }
 
 - (void)setCardItem:(CardItem *)cardItem {
@@ -52,10 +52,6 @@
         _cardItem = [cardItem retain];
         self.managedObjectContext = _cardItem.managedObjectContext;
     }
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    
 }
 
 @end

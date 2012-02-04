@@ -8,12 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QuicknavTableViewCell : UITableViewCell {
+@interface QuicknavTableViewCell : UIViewController {
     UILabel *_nameLable;
     UIImageView *_iconImageView;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *nameLabel;
 @property (nonatomic, retain) IBOutlet UIImageView *iconImageView;
+@property (nonatomic, retain) NSString *titleStr;
+
+- (void)setDefaultImageName:(NSString *)imageName defaultTitleName:(NSString *)titleName;
+- (IBAction)touchBegins:(UIButton *)sender;
 
 @end
