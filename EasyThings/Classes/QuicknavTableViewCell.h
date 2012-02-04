@@ -8,14 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+#define QUICKNAVCELL_WIDTH 110
+#define QUICKNAVCELL_HEIGHT 110
+
 @interface QuicknavTableViewCell : UIViewController {
     UILabel *_nameLable;
     UIImageView *_iconImageView;
+    NSInteger _index;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *nameLabel;
 @property (nonatomic, retain) IBOutlet UIImageView *iconImageView;
-@property (nonatomic, retain) NSString *titleStr;
+@property (nonatomic, copy) NSString *titleStr;
+@property (nonatomic) NSInteger index;
 
 - (void)setDefaultImageName:(NSString *)imageName defaultTitleName:(NSString *)titleName;
 - (IBAction)touchBegins:(UIButton *)sender;

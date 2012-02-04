@@ -13,6 +13,7 @@
 @synthesize nameLabel = _nameLable;
 @synthesize iconImageView = _iconImageView;
 @synthesize titleStr;
+@synthesize index = _index;
 
 - (void)dealloc
 {
@@ -31,7 +32,6 @@
 - (void)viewDidLoad
 {
     [self.nameLabel setText: titleStr];
-    NSLog(@"load:%@",self.nameLabel.text);
     [super viewDidLoad];
 }
 
@@ -41,12 +41,11 @@
     self.iconImageView.image = [UIImage imageNamed:imageName];
     self.nameLabel.font = [UIFont fontWithName:@"MV Boli" size:18.0f];
     self.titleStr = titleName;
-    NSLog(@"%@",self.titleStr);
 }
 
 - (IBAction)touchBegins:(UIButton *)sender
 {
-    NSLog(@"touch");
+    NSLog(@"%d",self.index);
 }
 
 @end

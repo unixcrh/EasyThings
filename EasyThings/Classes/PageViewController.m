@@ -11,11 +11,28 @@
 @implementation PageViewController
 
 @synthesize scrollView = _scrollview;
+@synthesize subviewArray = _subviewArray;
+@synthesize itemCount = _itemCount;
+@synthesize itemCountPerPage = _itemCountPerPage;
+@synthesize itemGap = _itemGap;
+@synthesize itemWidth = _itemWidth;
+@synthesize itemGapRedundance = _itemGapRedundance;
+@synthesize itemHeight = _itemHeight;
 
 - (void)dealloc 
 {
     [self.scrollView release];
+    [self.subviewArray release];
     [super dealloc];
+}
+
+- (NSMutableArray *)subviewArray
+{
+    if(!_subviewArray)
+    {
+        _subviewArray = [[NSMutableArray alloc] init];
+    }
+    return _subviewArray;
 }
 
 - (void)viewDidUnload
@@ -32,13 +49,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.scrollView.pagingEnabled = YES;
+    [self.scrollView setShowsHorizontalScrollIndicator:NO];
+    self.scrollView.pagingEnabled = NO;
 	CGRect oldFrame = self.scrollView.frame;
     //self.scrollView.transform = CGAffineTransformMakeRotation(-M_PI_2);
 	self.scrollView.frame = oldFrame;
-	CGFloat width = 1024;
-    CGFloat height = 800;
-    self.scrollView.contentSize = CGSizeMake(width, height);
+    //self.scrollView.contentSize = CGSizeMake(1024, 800);
     self.scrollView.delegate = self;
     //self.tableView.delegate = self;
     //self.tableView.dataSource = self;
@@ -49,64 +65,19 @@
     _itemGapRedundance = (1024 - _itemCountPerPage * _itemWidth) % (_itemCountPerPage + 1);
 }
 
-//- (int)numberOfRows
-//{
-//    return [self.tableView numberOfRowsInSection:0];
-//}
-//
-
-
-- (NSString *)customCellClassNameAtIndexPath:(NSIndexPath *)indexPath
+- (CGRect)getItemFrameByItemCount:(NSInteger) itemPosition
 {
-    return nil;
+    NSLog(@"position:%d,width:%d",itemPosition,self.itemWidth);
+    int offset1 = self.itemWidth/2.2;
+    int offset2 = self.itemHeight/12;
+    CGRect frame = CGRectMake(itemPosition*(self.itemWidth + self.itemGap*2)+offset1, 0+offset2, self.itemWidth, self.itemHeight);
+    return frame;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSInteger count = _itemCount;
-    count += _itemCountPerPage - count % _itemCountPerPage;
-    return count;
+- (CGSize)getContentSize
+{
+    return CGSizeMake((self.itemWidth + self.itemGap*2) * self.itemCount + self.itemWidth , self.itemHeight);
 }
 
-
-
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    NSInteger row = indexPath.row;
-    if(row >= _itemCount) {
-        //cell.hidden = YES;
-    }
-    else {
-        
-    }
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSInteger row = indexPath.row;
-    NSInteger result;
-    if((row + 1) % _itemCountPerPage == 0) {
-        result = _itemWidth + _itemGap * 2 + _itemGapRedundance;
-    }
-    else {
-        result = _itemWidth + _itemGap;
-    }
-    return result;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *name = [self customCellClassNameAtIndexPath:indexPath];
-    NSString *CellIdentifier = name ? name : @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        if (name) {
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:name owner:self options:nil];
-            cell = [nib lastObject];
-        }
-        else {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            [cell autorelease];
-        }
-    }
-    [self configureCell:cell atIndexPath:indexPath];
-    return cell;
-}
 
 @end

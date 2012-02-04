@@ -14,6 +14,7 @@
 @implementation CardTableViewCell
 
 @synthesize cardViewController = _cardViewController;
+@synthesize index = _index;
 
 - (void)dealloc
 {
@@ -22,7 +23,7 @@
     [super dealloc];
 }
 
-- (void)awakeFromNib
+- (void)viewDidLoad
 {
     //NSLog(@"CardTableViewCell awakeFromNib");
     //self.transform = CGAffineTransformRotate(self.transform, M_PI_2);  
@@ -30,7 +31,7 @@
     aCardViewController.view.frame = CGRectMake(CARD_VIEW_CONTROLLER_POS_X, CARD_VIEW_CONTROLLER_POS_Y, self.cardViewController.view.frame.size.width, self.cardViewController.view.frame.size.height);
     self.cardViewController = aCardViewController;
     [aCardViewController release];
-    [self.contentView addSubview:self.cardViewController.view];
+    [self.view addSubview:self.cardViewController.view];
 }
 
 @end

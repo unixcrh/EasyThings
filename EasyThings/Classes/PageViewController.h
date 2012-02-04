@@ -13,17 +13,28 @@
 @interface PageViewController : CoreDataViewController<UIScrollViewDelegate> {    
     NSInteger _itemCountPerPage;
     NSInteger _itemWidth;
+    NSInteger _itemHeight;
     NSInteger _itemGap;
     NSInteger _itemCount;
     NSInteger _itemGapRedundance;
     BaseScrollView *_scrollview;
+    NSMutableArray *_subviewArray;
 }
 
 @property(nonatomic, retain) IBOutlet BaseScrollView *scrollView;
+@property(nonatomic, retain) NSMutableArray *subviewArray;
+@property(nonatomic) NSInteger itemCountPerPage;
+@property(nonatomic) NSInteger itemWidth;
+@property(nonatomic) NSInteger itemGap;
+@property(nonatomic) NSInteger itemCount;
+@property(nonatomic) NSInteger itemGapRedundance;
+@property(nonatomic) NSInteger itemHeight;
 
 - (void)initPage;
+- (CGRect)getItemFrameByItemCount:(NSInteger) itemPosition;
+- (CGSize)getContentSize;
 // method to overwrite
-- (NSString *)customCellClassNameAtIndexPath:(NSIndexPath *)indexPath;
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+//- (NSString *)customCellClassNameAtIndexPath:(NSIndexPath *)indexPath;
+//- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 
 @end

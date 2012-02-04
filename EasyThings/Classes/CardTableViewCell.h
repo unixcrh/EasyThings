@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "CardViewController.h"
 
-@interface CardTableViewCell : UITableViewCell {
+@interface CardTableViewCell : UIViewController {
     CardViewController *_cardViewController;
+    NSInteger _index;
 }
 
 @property (nonatomic, retain) CardViewController *cardViewController;
+
+@property (nonatomic) NSInteger index;
 
 @end

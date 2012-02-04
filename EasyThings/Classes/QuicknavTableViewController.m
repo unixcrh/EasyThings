@@ -13,8 +13,6 @@
 
 @implementation QuicknavTableViewController
 
-@synthesize count = _count;
-
 - (void)dealloc {
     [super dealloc];
 }
@@ -36,74 +34,36 @@
     QuicknavTableViewCell *quicknavCell = [[QuicknavTableViewCell alloc] init];
     [quicknavCell setDefaultImageName:imageName defaultTitleName:titleName];
     quicknavCell.nameLabel.text = titleName;
-    quicknavCell.view.frame = CGRectMake(self.count*(110+20) + 40, 0, 110, 110);
-    self.count = self.count + 1;
-    NSLog(@"count:%d",self.count);
+    
+    quicknavCell.index = self.itemCount++;
+
+    quicknavCell.view.frame = [self getItemFrameByItemCount:quicknavCell.index];
+    NSLog(@"count:%d",quicknavCell.index);
     [self.scrollView addSubview:quicknavCell.view];
+    [self.subviewArray addObject:quicknavCell];
     [quicknavCell release];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _itemCountPerPage = 9;
-    _itemWidth = kItemWidth;
-    _itemCount = 5;
+    self.itemCountPerPage = 9;
+    self.itemWidth = QUICKNAVCELL_WIDTH;
+    self.itemHeight = QUICKNAVCELL_HEIGHT;
+    self.itemCount = 0;    
     
-#define WIDTH 1500
-    
-    self.scrollView.contentSize = CGSizeMake(WIDTH, 110);
     
     //用它指定 ScrollView 中内容的当前位置，即相对于 ScrollView 的左上顶点的偏移
     self.scrollView.contentOffset = CGPointMake(0, 0);
-    
-    //按页滚动，总是一次一个宽度，或一个高度单位的滚动
-    self.scrollView.pagingEnabled = NO;
 
     [self createBasicViewCellWithImageName:@"icon_cal.png" titleName:@"Calender"];
     [self createBasicViewCellWithImageName:@"icon_today.png" titleName:@"Today"];
     [self createBasicViewCellWithImageName:@"icon_all_cat.png" titleName:@"All Category"];
     [self createBasicViewCellWithImageName:@"icon_search.png" titleName:@"Search"];
     [self createBasicViewCellWithImageName:@"icon_setting.png" titleName:@"Setting"];
+    self.scrollView.contentSize = [self getContentSize];
     [self initPage];
     
-}
-
-- (NSString *)customCellClassNameAtIndexPath:(NSIndexPath *)indexPath
-{
-    if(indexPath.row < _itemCount)
-        return @"QuicknavTableViewCell";
-    else
-        return nil;
-}
-
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    [super configureCell:cell atIndexPath:indexPath];
-    QuicknavTableViewCell *quicknavCell = (QuicknavTableViewCell *)cell;
-    switch (indexPath.row) {
-        case 0:
-            quicknavCell.iconImageView.image = [UIImage imageNamed:@"icon_cal.png"];
-            quicknavCell.nameLabel.text = @"Calendar";
-            break;
-        case 1:
-            quicknavCell.iconImageView.image = [UIImage imageNamed:@"icon_today.png"];
-            quicknavCell.nameLabel.text = @"Today";
-            break;
-        case 2:
-            quicknavCell.iconImageView.image = [UIImage imageNamed:@"icon_all_cat.png"];
-            quicknavCell.nameLabel.text = @"All Category";
-            break;
-        case 3:
-            quicknavCell.iconImageView.image = [UIImage imageNamed:@"icon_search.png"];
-            quicknavCell.nameLabel.text = @"Search";
-            break;
-        case 4:
-            quicknavCell.iconImageView.image = [UIImage imageNamed:@"icon_setting.png"];
-            quicknavCell.nameLabel.text = @"Setting";
-            break;
-        default:
-            break;
-    }
 }
 
 @end

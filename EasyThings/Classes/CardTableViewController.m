@@ -10,7 +10,8 @@
 #import "CardTableViewCell.h"
 #import "CardItem+Addition.h"
 
-#define kCardWidth 300
+#define kCardWidth 330
+#define kCardHeight 650;
 
 @implementation CardTableViewController
 
@@ -25,32 +26,44 @@
     [super viewDidUnload];
 }
 
+- (void)createBasicViewCellWithTitleName:(NSString *)titleName
+{
+    //设定 ScrollView 的 Frame，逐页滚动时，如果横向滚动，按宽度为一个单位滚动，纵向时，按高度为一个单位滚动
+    //self.scrollView.backgroundColor = [UIColor grayColor]; // ScrollView 背景色，即 View 间的填充色
+    
+    CardTableViewCell *cardCell = [[CardTableViewCell alloc] init];
+    cardCell.cardViewController.titleLabel.text = titleName;
+    
+    cardCell.index = self.itemCount++;
+    cardCell.view.frame = [self getItemFrameByItemCount:cardCell.index];
+    //NSLog(@"count:%d",self.count);
+    [self.scrollView addSubview:cardCell.view];
+    [self.subviewArray addObject:cardCell];
+    [cardCell release];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     _itemCountPerPage = 3;
     _itemWidth = kCardWidth;
-    _itemCount = 4;
+    _itemHeight = kCardHeight;
+    _itemCount = 0;
+    
+    //用它指定 ScrollView 中内容的当前位置，即相对于 ScrollView 的左上顶点的偏移
+    self.scrollView.contentOffset = CGPointMake(0, 0);
+        
+    [self createBasicViewCellWithTitleName:@"title"];
+    [self createBasicViewCellWithTitleName:@"title2"];
+    [self createBasicViewCellWithTitleName:@"title3"];
+    [self createBasicViewCellWithTitleName:@"title4"];
+
+
+
+
+    self.scrollView.contentSize = [self getContentSize];
     [self initPage];
 }
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    [super configureCell:cell atIndexPath:indexPath];
-    if(indexPath.row < _itemCount) {
-        CardTableViewCell *cardTableViewCell = (CardTableViewCell *)cell;
-        CardViewController *cardViewController = cardTableViewCell.cardViewController;
-        cardViewController.managedObjectContext = self.managedObjectContext;
-        cardViewController.cardItem = [CardItem insertCardAtIndex:indexPath.row inManagedObjectContext:self.managedObjectContext];
-        cardViewController.titleLabel.text = cardViewController.cardItem.name;
-    }
-}
-
-- (NSString *)customCellClassNameAtIndexPath:(NSIndexPath *)indexPath
-{
-    if(indexPath.row < _itemCount)
-        return @"CardTableViewCell";
-    else
-        return nil;
-}
 
 @end
