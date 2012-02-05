@@ -12,7 +12,6 @@
 
 @synthesize nameLabel = _nameLable;
 @synthesize iconImageView = _iconImageView;
-@synthesize titleStr;
 @synthesize index = _index;
 
 - (void)dealloc
@@ -20,32 +19,24 @@
     //NSLog(@"QuicknavTableViewCell dealloc");
     [_nameLable release];
     [_iconImageView release];
-    [titleStr release];
     [super dealloc];
-}
-
-- (void)awakeFromNib
-{
-    self.nameLabel.font = [UIFont fontWithName:@"MV Boli" size:18.0f];
 }
 
 - (void)viewDidLoad
 {
-    [self.nameLabel setText: titleStr];
     [super viewDidLoad];
 }
 
 - (void)setDefaultImageName:(NSString *)imageName defaultTitleName:(NSString *)titleName
 {
     self.view.backgroundColor = [UIColor clearColor];
-    self.iconImageView.image = [UIImage imageNamed:imageName];
     self.nameLabel.font = [UIFont fontWithName:@"MV Boli" size:18.0f];
-    self.titleStr = titleName;
+    self.nameLabel.text = titleName;
+    self.iconImageView.image = [UIImage imageNamed:imageName];
 }
 
 - (IBAction)touchBegins:(UIButton *)sender
 {
-    NSLog(@"%d",self.index);
 }
 
 @end

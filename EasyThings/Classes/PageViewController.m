@@ -52,12 +52,8 @@
     [self.scrollView setShowsHorizontalScrollIndicator:NO];
     self.scrollView.pagingEnabled = NO;
 	CGRect oldFrame = self.scrollView.frame;
-    //self.scrollView.transform = CGAffineTransformMakeRotation(-M_PI_2);
 	self.scrollView.frame = oldFrame;
-    //self.scrollView.contentSize = CGSizeMake(1024, 800);
     self.scrollView.delegate = self;
-    //self.tableView.delegate = self;
-    //self.tableView.dataSource = self;
 }
 
 - (void)initPage {
@@ -67,7 +63,6 @@
 
 - (CGRect)getItemFrameByItemCount:(NSInteger) itemPosition
 {
-    NSLog(@"position:%d,width:%d",itemPosition,self.itemWidth);
     int offset1 = self.itemWidth/2.2;
     int offset2 = self.itemHeight/12;
     CGRect frame = CGRectMake(itemPosition*(self.itemWidth + self.itemGap*2)+offset1, 0+offset2, self.itemWidth, self.itemHeight);

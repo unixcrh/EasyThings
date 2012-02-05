@@ -28,18 +28,18 @@
     self.titleLabel = nil;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-}
-
 - (void)loadWordTableViewController {
     WordTableViewController *vc = [[WordTableViewController alloc] init];
     self.wordTableViewController = vc;
     self.wordTableViewController.cardItem = self.cardItem;
     [self.view addSubview:vc.view];
-    [vc release];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)setCardItem:(CardItem *)cardItem {

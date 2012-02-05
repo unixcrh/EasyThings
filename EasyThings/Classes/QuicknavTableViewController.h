@@ -11,4 +11,6 @@
 
 @interface QuicknavTableViewController : PageViewController
 
+- (void)createBasicViewCellWithImageName:(NSString *)imageName titleName:(NSString *)titleName;
+
 @end

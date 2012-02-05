@@ -32,14 +32,10 @@
     //self.scrollView.backgroundColor = [UIColor grayColor]; // ScrollView 背景色，即 View 间的填充色
     
     QuicknavTableViewCell *quicknavCell = [[QuicknavTableViewCell alloc] init];
-    [quicknavCell setDefaultImageName:imageName defaultTitleName:titleName];
-    quicknavCell.nameLabel.text = titleName;
-    
     quicknavCell.index = self.itemCount++;
-
     quicknavCell.view.frame = [self getItemFrameByItemCount:quicknavCell.index];
-    NSLog(@"count:%d",quicknavCell.index);
     [self.scrollView addSubview:quicknavCell.view];
+    [quicknavCell setDefaultImageName:imageName defaultTitleName:titleName];
     [self.cellArray addObject:quicknavCell];
     [quicknavCell release];
 }

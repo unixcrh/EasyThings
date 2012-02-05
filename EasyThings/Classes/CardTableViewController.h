@@ -10,5 +10,6 @@
 
 @interface CardTableViewController : PageViewController
 
+- (void)createBasicViewCellWithTitleName:(NSString *)titleName;
 
 @end

@@ -17,7 +17,6 @@
 
 - (void)dealloc
 {
-    NSLog(@"CardTableViewController dealloc");
     [super dealloc];
 }
 
@@ -29,12 +28,12 @@
 - (void)createBasicViewCellWithTitleName:(NSString *)titleName
 {
     CardTableViewCell *cardCell = [[CardTableViewCell alloc] init];
-    cardCell.cardViewController.titleLabel.text = titleName;
-    
     cardCell.index = self.itemCount++;
     cardCell.view.frame = [self getItemFrameByItemCount:cardCell.index];
     [self.scrollView addSubview:cardCell.view];
     [self.cellArray addObject:cardCell];
+    
+    cardCell.cardViewController.titleLabel.text = titleName;
     [cardCell release];
 }
 
@@ -48,10 +47,10 @@
     //用它指定 ScrollView 中内容的当前位置，即相对于 ScrollView 的左上顶点的偏移
     self.scrollView.contentOffset = CGPointMake(0, 0);
         
-    [self createBasicViewCellWithTitleName:@"title"];
-    [self createBasicViewCellWithTitleName:@"title2"];
-    [self createBasicViewCellWithTitleName:@"title3"];
-    [self createBasicViewCellWithTitleName:@"title4"];
+    [self createBasicViewCellWithTitleName:@"Yesterday"];
+    [self createBasicViewCellWithTitleName:@"Today"];
+    [self createBasicViewCellWithTitleName:@"Tomorrow"];
+    [self createBasicViewCellWithTitleName:@"The day after tomorrow"];
     
     self.scrollView.contentSize = [self getScrollViewContentSize];
     [self initPage];

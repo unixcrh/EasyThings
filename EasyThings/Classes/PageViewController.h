@@ -33,8 +33,5 @@
 - (void)initPage;
 - (CGRect)getItemFrameByItemCount:(NSInteger) itemPosition;
 - (CGSize)getScrollViewContentSize;
-// method to overwrite
-//- (NSString *)customCellClassNameAtIndexPath:(NSIndexPath *)indexPath;
-//- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 
 @end

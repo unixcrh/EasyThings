@@ -19,7 +19,6 @@
 
 @property (nonatomic, retain) IBOutlet UILabel *nameLabel;
 @property (nonatomic, retain) IBOutlet UIImageView *iconImageView;
-@property (nonatomic, copy) NSString *titleStr;
 @property (nonatomic) NSInteger index;
 
 - (void)setDefaultImageName:(NSString *)imageName defaultTitleName:(NSString *)titleName;
