@@ -15,12 +15,6 @@
 @synthesize cardTableViewController = _cardTableViewController;
 @synthesize quicknavTableViewController = _quicknavTableViewController;
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
-}
-
 - (void)dealloc {
     [_cardTableViewController release];
     [_quicknavTableViewController release];
@@ -39,12 +33,19 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     // Set up the edit and add buttons.
+    CardTableViewController *aCardTableViewController = [[CardTableViewController alloc] init];
+    self.cardTableViewController = aCardTableViewController;
     self.cardTableViewController.managedObjectContext = self.managedObjectContext;
-    self.quicknavTableViewController.managedObjectContext = self.managedObjectContext;
+    [aCardTableViewController release];
     self.cardTableViewController.view.frame = CGRectMake(0, -39, 1024, 700);
-    [self.view addSubview:_cardTableViewController.view];
+    [self.view addSubview:self.cardTableViewController.view];
+    
+    QuicknavTableViewController *aQuicknavTableViewController = [[QuicknavTableViewController alloc] init];
+    self.quicknavTableViewController = aQuicknavTableViewController;
+    self.quicknavTableViewController.managedObjectContext = self.managedObjectContext;
+    [aQuicknavTableViewController release];
     self.quicknavTableViewController.view.frame = CGRectMake(0, 620, 1024, 200);
-    [self.view addSubview:_quicknavTableViewController.view];
+    [self.view addSubview:self.quicknavTableViewController.view];
 }
 
 - (void)viewWillAppear:(BOOL)animated

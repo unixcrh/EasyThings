@@ -28,11 +28,11 @@
 - (void)createBasicViewCellWithTitleName:(NSString *)titleName
 {
     CardTableViewCell *cardCell = [[CardTableViewCell alloc] init];
+    cardCell.managedObjectContext = self.managedObjectContext;
     cardCell.index = self.itemCount++;
     cardCell.view.frame = [self getItemFrameByItemCount:cardCell.index];
     [self.scrollView addSubview:cardCell.view];
     [self.cellArray addObject:cardCell];
-    cardCell.managedObjectContext = self.managedObjectContext;
     cardCell.cardViewController.titleLabel.text = titleName;
     [cardCell release];
 }

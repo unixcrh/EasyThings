@@ -12,8 +12,8 @@
 @class CardTableViewController;
 @class QuicknavTableViewController;
 @interface RootViewController : CoreDataViewController {
-    IBOutlet CardTableViewController *_cardTableViewController;
-    IBOutlet QuicknavTableViewController *_quicknavTableViewController;
+    CardTableViewController *_cardTableViewController;
+    QuicknavTableViewController *_quicknavTableViewController;
 }
 
 @property (retain, nonatomic) CardTableViewController *cardTableViewController;

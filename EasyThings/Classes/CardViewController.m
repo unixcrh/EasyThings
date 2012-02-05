@@ -28,18 +28,20 @@
     self.titleLabel = nil;
 }
 
-- (void)loadWordTableViewController {
-    WordTableViewController *vc = [[WordTableViewController alloc] init];
-    vc.managedObjectContext = self.managedObjectContext;
-    self.wordTableViewController = vc;
-    self.wordTableViewController.cardItem = self.cardItem;
-    [self.view addSubview:vc.view];
+- (id)init {
+    self = [super init];
+    if(self) {
+        WordTableViewController *vc = [[WordTableViewController alloc] init];
+        self.wordTableViewController = vc;
+        [vc release];
+    }
+    return self;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self loadWordTableViewController];
+    //[self.view addSubview:self.wordTableViewController.view];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -48,7 +50,14 @@
         [_cardItem release];
         _cardItem = [cardItem retain];
         self.managedObjectContext = _cardItem.managedObjectContext;
-        [self loadWordTableViewController];
+    }
+}
+
+- (void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
+    if(_managedObjectContext != managedObjectContext) {
+        [_managedObjectContext release];
+        _managedObjectContext = [managedObjectContext retain];
+        self.wordTableViewController.managedObjectContext = _managedObjectContext;
     }
 }
 

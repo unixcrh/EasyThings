@@ -28,15 +28,29 @@
     self.cardViewController = nil;
 }
 
+- (id)init {
+    self = [super init];
+    if(self) {
+        CardViewController *aCardViewController = [[CardViewController alloc] init];
+        aCardViewController.view.frame = CGRectMake(CARD_VIEW_CONTROLLER_POS_X, CARD_VIEW_CONTROLLER_POS_Y, self.cardViewController.view.frame.size.width, self.cardViewController.view.frame.size.height);
+        self.cardViewController = aCardViewController;
+        [aCardViewController release];
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
-    //self.transform = CGAffineTransformRotate(self.transform, M_PI_2);
     [super viewDidLoad];
-    CardViewController *aCardViewController = [[CardViewController alloc] init];
-    aCardViewController.view.frame = CGRectMake(CARD_VIEW_CONTROLLER_POS_X, CARD_VIEW_CONTROLLER_POS_Y, self.cardViewController.view.frame.size.width, self.cardViewController.view.frame.size.height);
-    self.cardViewController = aCardViewController;
-    [aCardViewController release];
     [self.view addSubview:self.cardViewController.view];
+}
+
+- (void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
+    if(_managedObjectContext != managedObjectContext) {
+        [_managedObjectContext release];
+        _managedObjectContext = [managedObjectContext retain];
+        self.cardViewController.managedObjectContext = _managedObjectContext;
+    }
 }
 
 @end
