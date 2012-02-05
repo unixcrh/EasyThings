@@ -18,11 +18,11 @@
     NSInteger _itemCount;
     NSInteger _itemGapRedundance;
     BaseScrollView *_scrollview;
-    NSMutableArray *_subviewArray;
+    NSMutableArray *_cellArray;
 }
 
 @property(nonatomic, retain) IBOutlet BaseScrollView *scrollView;
-@property(nonatomic, retain) NSMutableArray *subviewArray;
+@property(nonatomic, retain) NSMutableArray *cellArray;
 @property(nonatomic) NSInteger itemCountPerPage;
 @property(nonatomic) NSInteger itemWidth;
 @property(nonatomic) NSInteger itemGap;
@@ -32,7 +32,7 @@
 
 - (void)initPage;
 - (CGRect)getItemFrameByItemCount:(NSInteger) itemPosition;
-- (CGSize)getContentSize;
+- (CGSize)getScrollViewContentSize;
 // method to overwrite
 //- (NSString *)customCellClassNameAtIndexPath:(NSIndexPath *)indexPath;
 //- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;

@@ -11,7 +11,7 @@
 @implementation PageViewController
 
 @synthesize scrollView = _scrollview;
-@synthesize subviewArray = _subviewArray;
+@synthesize cellArray = _cellArray;
 @synthesize itemCount = _itemCount;
 @synthesize itemCountPerPage = _itemCountPerPage;
 @synthesize itemGap = _itemGap;
@@ -22,17 +22,17 @@
 - (void)dealloc 
 {
     [self.scrollView release];
-    [self.subviewArray release];
+    [self.cellArray release];
     [super dealloc];
 }
 
 - (NSMutableArray *)subviewArray
 {
-    if(!_subviewArray)
+    if(!_cellArray)
     {
-        _subviewArray = [[NSMutableArray alloc] init];
+        _cellArray = [[NSMutableArray alloc] init];
     }
-    return _subviewArray;
+    return _cellArray;
 }
 
 - (void)viewDidUnload
@@ -74,7 +74,7 @@
     return frame;
 }
 
-- (CGSize)getContentSize
+- (CGSize)getScrollViewContentSize
 {
     return CGSizeMake((self.itemWidth + self.itemGap*2) * self.itemCount + self.itemWidth , self.itemHeight);
 }

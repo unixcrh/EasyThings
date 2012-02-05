@@ -40,7 +40,7 @@
     quicknavCell.view.frame = [self getItemFrameByItemCount:quicknavCell.index];
     NSLog(@"count:%d",quicknavCell.index);
     [self.scrollView addSubview:quicknavCell.view];
-    [self.subviewArray addObject:quicknavCell];
+    [self.cellArray addObject:quicknavCell];
     [quicknavCell release];
 }
 
@@ -50,8 +50,6 @@
     self.itemCountPerPage = 9;
     self.itemWidth = QUICKNAVCELL_WIDTH;
     self.itemHeight = QUICKNAVCELL_HEIGHT;
-    self.itemCount = 0;    
-    
     
     //用它指定 ScrollView 中内容的当前位置，即相对于 ScrollView 的左上顶点的偏移
     self.scrollView.contentOffset = CGPointMake(0, 0);
@@ -61,7 +59,9 @@
     [self createBasicViewCellWithImageName:@"icon_all_cat.png" titleName:@"All Category"];
     [self createBasicViewCellWithImageName:@"icon_search.png" titleName:@"Search"];
     [self createBasicViewCellWithImageName:@"icon_setting.png" titleName:@"Setting"];
-    self.scrollView.contentSize = [self getContentSize];
+    
+    //设置scrollview的显示区域
+    self.scrollView.contentSize = [self getScrollViewContentSize];
     [self initPage];
     
 }
