@@ -32,6 +32,7 @@
 }
 
 - (void)configureRequest:(NSFetchRequest *)request {
+    NSLog(@"%@",self.managedObjectContext);
     [request setEntity:[NSEntityDescription entityForName:@"WordItem" inManagedObjectContext:self.managedObjectContext]];
     NSPredicate *predicate;
     NSArray *descriptors;

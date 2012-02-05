@@ -30,6 +30,7 @@
 
 - (void)loadWordTableViewController {
     WordTableViewController *vc = [[WordTableViewController alloc] init];
+    vc.managedObjectContext = self.managedObjectContext;
     self.wordTableViewController = vc;
     self.wordTableViewController.cardItem = self.cardItem;
     [self.view addSubview:vc.view];
@@ -38,7 +39,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self loadWordTableViewController];
     // Do any additional setup after loading the view from its nib.
 }
 

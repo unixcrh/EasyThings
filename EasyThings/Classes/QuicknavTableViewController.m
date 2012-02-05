@@ -36,6 +36,7 @@
     quicknavCell.view.frame = [self getItemFrameByItemCount:quicknavCell.index];
     [self.scrollView addSubview:quicknavCell.view];
     [quicknavCell setDefaultImageName:imageName defaultTitleName:titleName];
+    quicknavCell.managedObjectContext = self.managedObjectContext;
     [self.cellArray addObject:quicknavCell];
     [quicknavCell release];
 }

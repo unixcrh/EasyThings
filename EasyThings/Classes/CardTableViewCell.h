@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "CardViewController.h"
+#import "CoreDataViewController.h"
 
-@interface CardTableViewCell : UIViewController {
+@interface CardTableViewCell : CoreDataViewController {
     CardViewController *_cardViewController;
     NSInteger _index;
 }
