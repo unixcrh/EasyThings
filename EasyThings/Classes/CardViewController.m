@@ -41,7 +41,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //[self.view addSubview:self.wordTableViewController.view];
+    [self.view addSubview:self.wordTableViewController.view];
     // Do any additional setup after loading the view from its nib.
 }
 
