@@ -9,7 +9,8 @@
 #import "QuicknavTableViewController.h"
 #import "QuicknavTableViewCell.h"
 
-#define kItemWidth 80
+#define kItemWidth 110
+#define kItemHeight 100
 
 @implementation QuicknavTableViewController
 
@@ -33,7 +34,7 @@
     
     QuicknavTableViewCell *quicknavCell = [[QuicknavTableViewCell alloc] init];
     quicknavCell.index = self.itemCount++;
-    quicknavCell.view.frame = [self getItemFrameByItemCount:quicknavCell.index];
+    quicknavCell.view.frame = [self getItemFrameByItemCount:quicknavCell.index withOffset:5];
     [self.scrollView addSubview:quicknavCell.view];
     [quicknavCell setDefaultImageName:imageName defaultTitleName:titleName];
     quicknavCell.managedObjectContext = self.managedObjectContext;
@@ -45,21 +46,35 @@
 {
     [super viewDidLoad];
     self.itemCountPerPage = 9;
-    self.itemWidth = QUICKNAVCELL_WIDTH;
-    self.itemHeight = QUICKNAVCELL_HEIGHT;
-    
-    //用它指定 ScrollView 中内容的当前位置，即相对于 ScrollView 的左上顶点的偏移
-    self.scrollView.contentOffset = CGPointMake(0, 0);
+    self.itemWidth = kItemWidth;
+    self.itemHeight = kItemHeight;
+    [self initPage];
 
     [self createBasicViewCellWithImageName:@"icon_cal.png" titleName:@"Calender"];
     [self createBasicViewCellWithImageName:@"icon_today.png" titleName:@"Today"];
     [self createBasicViewCellWithImageName:@"icon_all_cat.png" titleName:@"All Category"];
     [self createBasicViewCellWithImageName:@"icon_search.png" titleName:@"Search"];
     [self createBasicViewCellWithImageName:@"icon_setting.png" titleName:@"Setting"];
+    [self createBasicViewCellWithImageName:@"icon_cal.png" titleName:@"Calender"];
+    [self createBasicViewCellWithImageName:@"icon_cal.png" titleName:@"Calender"];
+    [self createBasicViewCellWithImageName:@"icon_cal.png" titleName:@"Calender"];
+    [self createBasicViewCellWithImageName:@"icon_cal.png" titleName:@"Calender"];
+    [self createBasicViewCellWithImageName:@"icon_cal.png" titleName:@"Calender"];
+    [self createBasicViewCellWithImageName:@"icon_cal.png" titleName:@"Calender"];
+    [self createBasicViewCellWithImageName:@"icon_cal.png" titleName:@"Calender"];
+    [self createBasicViewCellWithImageName:@"icon_cal.png" titleName:@"Calender"];
+    [self createBasicViewCellWithImageName:@"icon_cal.png" titleName:@"Calender"];
+    [self createBasicViewCellWithImageName:@"icon_cal.png" titleName:@"Calender"];
+    [self createBasicViewCellWithImageName:@"icon_cal.png" titleName:@"Calender"];
+    [self createBasicViewCellWithImageName:@"icon_cal.png" titleName:@"Calender"];
+    [self createBasicViewCellWithImageName:@"icon_cal.png" titleName:@"Calender"];
+    [self createBasicViewCellWithImageName:@"icon_cal.png" titleName:@"Calender"];
+    [self createBasicViewCellWithImageName:@"icon_cal.png" titleName:@"Calender"];
+    [self createBasicViewCellWithImageName:@"icon_cal.png" titleName:@"Calender"];
+    
     
     //设置scrollview的显示区域
     self.scrollView.contentSize = [self getScrollViewContentSize];
-    [self initPage];
     
 }
 

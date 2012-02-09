@@ -31,7 +31,7 @@
 @property(nonatomic) NSInteger itemHeight;
 
 - (void)initPage;
-- (CGRect)getItemFrameByItemCount:(NSInteger) itemPosition;
+- (CGRect)getItemFrameByItemCount:(NSInteger) itemPosition withOffset:(int)offset;
 - (CGSize)getScrollViewContentSize;
 
 @end

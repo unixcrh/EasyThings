@@ -8,9 +8,6 @@
 
 #import "CardTableViewCell.h"
 
-#define CARD_VIEW_CONTROLLER_POS_X  31
-#define CARD_VIEW_CONTROLLER_POS_Y  75
-
 @implementation CardTableViewCell
 
 @synthesize cardViewController = _cardViewController;
@@ -32,7 +29,7 @@
     self = [super init];
     if(self) {
         CardViewController *aCardViewController = [[CardViewController alloc] init];
-        aCardViewController.view.frame = CGRectMake(CARD_VIEW_CONTROLLER_POS_X, CARD_VIEW_CONTROLLER_POS_Y, self.cardViewController.view.frame.size.width, self.cardViewController.view.frame.size.height);
+        aCardViewController.view.frame = CGRectMake(0, 0, self.cardViewController.view.frame.size.width, self.cardViewController.view.frame.size.height);
         self.cardViewController = aCardViewController;
         [aCardViewController release];
     }

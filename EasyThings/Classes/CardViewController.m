@@ -31,9 +31,8 @@
 - (id)init {
     self = [super init];
     if(self) {
-        WordTableViewController *vc = [[WordTableViewController alloc] init];
+        WordTableViewController *vc = [[[WordTableViewController alloc] init] autorelease];
         self.wordTableViewController = vc;
-        [vc release];
     }
     return self;
 }
@@ -41,6 +40,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"%d",self.wordTableViewController.managedObjectContext != nil);
+    self.wordTableViewController.view.frame = self.view.frame;
     [self.view addSubview:self.wordTableViewController.view];
     // Do any additional setup after loading the view from its nib.
 }
@@ -50,6 +51,7 @@
         [_cardItem release];
         _cardItem = [cardItem retain];
         self.managedObjectContext = _cardItem.managedObjectContext;
+        self.wordTableViewController.cardItem = cardItem;
     }
 }
 

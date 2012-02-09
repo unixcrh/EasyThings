@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "CoreDataViewController.h"
 
-#define QUICKNAVCELL_WIDTH 110
-#define QUICKNAVCELL_HEIGHT 110
 
 @interface QuicknavTableViewCell : CoreDataViewController {
     UILabel *_nameLable;

@@ -50,7 +50,7 @@
 {
     [super viewDidLoad];
     [self.scrollView setShowsHorizontalScrollIndicator:NO];
-    self.scrollView.pagingEnabled = NO;
+    self.scrollView.pagingEnabled = YES;
 	CGRect oldFrame = self.scrollView.frame;
 	self.scrollView.frame = oldFrame;
     self.scrollView.delegate = self;
@@ -61,17 +61,17 @@
     _itemGapRedundance = (1024 - _itemCountPerPage * _itemWidth) % (_itemCountPerPage + 1);
 }
 
-- (CGRect)getItemFrameByItemCount:(NSInteger) itemPosition
+- (CGRect)getItemFrameByItemCount:(NSInteger) itemPosition withOffset:(int)offset
 {
-    int offset1 = self.itemWidth/2.2;
-    int offset2 = self.itemHeight/12;
-    CGRect frame = CGRectMake(itemPosition*(self.itemWidth + self.itemGap*2)+offset1, 0+offset2, self.itemWidth, self.itemHeight);
+    int indexOfPage = itemPosition / self.itemCountPerPage;
+    int indexOffsetInPage = itemPosition % self.itemCountPerPage;
+    CGRect frame = CGRectMake(self.itemWidth * indexOffsetInPage + indexOfPage * 1024 +offset, 0, self.itemWidth, self.itemHeight);
     return frame;
 }
 
 - (CGSize)getScrollViewContentSize
 {
-    return CGSizeMake((self.itemWidth + self.itemGap*2) * self.itemCount + self.itemWidth , self.itemHeight);
+    return CGSizeMake(1024 * (self.itemCount % self.itemCountPerPage == 0? self.itemCount / self.itemCountPerPage : self.itemCount / self.itemCountPerPage +1), 100);
 }
 
 

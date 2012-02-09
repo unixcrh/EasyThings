@@ -11,7 +11,7 @@
 #import "CardItem+Addition.h"
 
 #define kCardWidth 330
-#define kCardHeight 650;
+#define kCardHeight 650
 
 @implementation CardTableViewController
 
@@ -30,10 +30,14 @@
     CardTableViewCell *cardCell = [[CardTableViewCell alloc] init];
     cardCell.managedObjectContext = self.managedObjectContext;
     cardCell.index = self.itemCount++;
-    cardCell.view.frame = [self getItemFrameByItemCount:cardCell.index];
+    cardCell.view.frame = [self getItemFrameByItemCount:cardCell.index withOffset:34];
     [self.scrollView addSubview:cardCell.view];
     [self.cellArray addObject:cardCell];
     cardCell.cardViewController.titleLabel.text = titleName;
+    
+    CardItem *cardItem = [CardItem insertCardAtIndex:cardCell.index inManagedObjectContext:self.managedObjectContext];
+    cardCell.cardViewController.cardItem = cardItem;
+    
     [cardCell release];
 }
 
@@ -43,14 +47,16 @@
     _itemCountPerPage = 3;
     _itemWidth = kCardWidth;
     _itemHeight = kCardHeight;
-    
-    //用它指定 ScrollView 中内容的当前位置，即相对于 ScrollView 的左上顶点的偏移
-    self.scrollView.contentOffset = CGPointMake(0, 0);
         
     [self createBasicViewCellWithTitleName:@"Yesterday"];
     [self createBasicViewCellWithTitleName:@"Today"];
     [self createBasicViewCellWithTitleName:@"Tomorrow"];
     [self createBasicViewCellWithTitleName:@"The day after tomorrow"];
+    [self createBasicViewCellWithTitleName:@"The day after tomorrow"];
+    [self createBasicViewCellWithTitleName:@"The day after tomorrow"];
+    [self createBasicViewCellWithTitleName:@"The day after tomorrow"];
+    [self createBasicViewCellWithTitleName:@"The day after tomorrow"];
+
     
     self.scrollView.contentSize = [self getScrollViewContentSize];
     [self initPage];
