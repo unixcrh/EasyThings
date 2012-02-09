@@ -12,9 +12,12 @@
 @implementation WordTableViewController
 
 @synthesize cardItem = _cardItem;
+@synthesize index = _index;
+@synthesize titleLabel = _titleLabel;
 
 - (void)dealloc {
     [_cardItem release];
+    [_titleLabel release];
     [super dealloc];
 }
 
@@ -23,6 +26,7 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    self.titleLabel = nil;
 }
 
 - (void)viewDidLoad
@@ -33,7 +37,7 @@
 }
 
 - (void)configureRequest:(NSFetchRequest *)request {
-    NSLog(@"%@",self.managedObjectContext);
+    //NSLog(@"%@",self.managedObjectContext);
     [request setEntity:[NSEntityDescription entityForName:@"CardItem" inManagedObjectContext:self.managedObjectContext]];
     NSPredicate *predicate;
     NSArray *descriptors;
@@ -44,7 +48,7 @@
     [request setSortDescriptors:descriptors]; 
 }
 
--(void) configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"configue");
 }

@@ -12,8 +12,15 @@
 @class CardItem;
 
 @interface WordTableViewController : CoreDataTableViewController
+{
+    UILabel *_titleLabel;
+    NSInteger _index;
+}
 
 @property (nonatomic, retain) CardItem *cardItem;
+@property (nonatomic) NSInteger index;
+@property (nonatomic, retain) IBOutlet UILabel *titleLabel;
+
 
 - (IBAction)didClickAddButton:(id)sender;
 

@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RootViewController.h"
 
 @interface EasyThingsAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (retain, nonatomic) IBOutlet UIWindow *window;
+
+@property (retain, nonatomic) RootViewController *rootViewController;
 
 @property (retain, readonly, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (retain, readonly, nonatomic) NSManagedObjectModel *managedObjectModel;

@@ -26,7 +26,7 @@
     [super dealloc];
 }
 
-- (NSMutableArray *)subviewArray
+- (NSMutableArray *)cellArray
 {
     if(!_cellArray)
     {
@@ -50,6 +50,8 @@
 {
     [super viewDidLoad];
     [self.scrollView setShowsHorizontalScrollIndicator:NO];
+    self.scrollView.delaysContentTouches = YES;
+    self.scrollView.canCancelContentTouches = YES;
     self.scrollView.pagingEnabled = YES;
 	CGRect oldFrame = self.scrollView.frame;
 	self.scrollView.frame = oldFrame;

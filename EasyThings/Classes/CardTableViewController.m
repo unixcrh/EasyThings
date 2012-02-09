@@ -9,6 +9,7 @@
 #import "CardTableViewController.h"
 #import "CardTableViewCell.h"
 #import "CardItem+Addition.h"
+#import "WordTableViewController.h"
 
 #define kCardWidth 330
 #define kCardHeight 650
@@ -27,18 +28,17 @@
 
 - (void)createBasicViewCellWithTitleName:(NSString *)titleName
 {
-    CardTableViewCell *cardCell = [[CardTableViewCell alloc] init];
-    cardCell.managedObjectContext = self.managedObjectContext;
-    cardCell.index = self.itemCount++;
-    cardCell.view.frame = [self getItemFrameByItemCount:cardCell.index withOffset:34];
-    [self.scrollView addSubview:cardCell.view];
-    [self.cellArray addObject:cardCell];
-    cardCell.cardViewController.titleLabel.text = titleName;
+    WordTableViewController *wordCell = [[WordTableViewController alloc] init];
+    wordCell.index = self.itemCount++;
+    wordCell.view.frame = [self getItemFrameByItemCount:wordCell.index withOffset:34];
+    [self.scrollView addSubview:wordCell.view];
+    [self.cellArray addObject:wordCell];
+    wordCell.titleLabel.text = titleName;
     
-    CardItem *cardItem = [CardItem insertCardAtIndex:cardCell.index inManagedObjectContext:self.managedObjectContext];
-    cardCell.cardViewController.cardItem = cardItem;
+    CardItem *cardItem = [CardItem insertCardAtIndex:wordCell.index inManagedObjectContext:self.managedObjectContext];
+    wordCell.cardItem = cardItem;
     
-    [cardCell release];
+    [wordCell release];
 }
 
 - (void)viewDidLoad
@@ -56,7 +56,6 @@
     [self createBasicViewCellWithTitleName:@"The day after tomorrow"];
     [self createBasicViewCellWithTitleName:@"The day after tomorrow"];
     [self createBasicViewCellWithTitleName:@"The day after tomorrow"];
-
     
     self.scrollView.contentSize = [self getScrollViewContentSize];
     [self initPage];

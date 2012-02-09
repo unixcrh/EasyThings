@@ -13,15 +13,14 @@
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"SV Touch Began");
-    
     if (!self.dragging)
-        [self.nextResponder touchesBegan: touches withEvent:event];
-    else
+    {
+        [self.nextResponder touchesMoved: touches withEvent:event];
+    }    else
     {
         NSLog(@"Drag Touch Begin");
         [super touchesBegan: touches withEvent: event];
     }
-    
 }
 
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -29,7 +28,10 @@
     NSLog(@"SV Touch Moved");
     
     if (!self.dragging)
+    {
         [self.nextResponder touchesMoved: touches withEvent:event];
+        NSLog(@"%@",self.nextResponder);
+    }
     else
     {
         NSLog(@"Drag Touch Moved");
@@ -40,10 +42,11 @@
 - (void) touchesEnded:(NSSet *) touches withEvent: (UIEvent *) event
 {    
     NSLog(@"SV Touch End");
-    
     if (!self.dragging)
-        [self.nextResponder touchesEnded: touches withEvent:event];
-    else
+    {
+        [self.nextResponder touchesMoved: touches withEvent:event];
+        NSLog(@"%@",self.nextResponder);
+    }    else
     {
         NSLog(@"Drag Touch End");
         [super touchesEnded: touches withEvent: event];

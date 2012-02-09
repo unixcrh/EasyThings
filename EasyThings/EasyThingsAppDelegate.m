@@ -7,7 +7,6 @@
 //
 
 #import "EasyThingsAppDelegate.h"
-#import "RootViewController.h"
 
 @implementation EasyThingsAppDelegate
 
@@ -15,13 +14,15 @@
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
+@synthesize rootViewController = _rootViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     RootViewController *controller = [[[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil] autorelease];
     controller.managedObjectContext = self.managedObjectContext;
-    self.window.rootViewController = controller;
+    self.rootViewController = controller;
+    [self.window addSubview:self.rootViewController.view];
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -180,6 +181,7 @@
     [__managedObjectContext release];
     [__managedObjectModel release];
     [__persistentStoreCoordinator release];
+    [_rootViewController release];
     [super dealloc];
 }
 
